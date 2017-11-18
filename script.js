@@ -10,10 +10,8 @@ function bubble_push( width, height, text, dellay, callback, parent) {
     $(parent).append("<div id='bubble' style='height: "+height+"px;width: "+width+"px;' class='bubble'></div>");
     $("#bubble").click(() => {
         bubbleCancled = 1;
-        window.setTimeout(() => {
-            $("#bubble").fadeOut();
-            callback();
-        }, 300);
+        $("#bubble").fadeOut();
+        callback();
     });
     $('#bubble').attr('data-before', text);
     window.setTimeout(() => {
@@ -84,7 +82,9 @@ var h = Math.max(document.documentElement.clientHeight, window.innerHeight || 0)
         var ele, pos, dx, dy, nx, ny;
 
         for (i = 0; i < cancer.length; ++i) {
-            if (!cancert[i]) 
+           
+	try {
+	    if (!cancert[i]) 
             {
                 cancert[i]  = ran(30, 100);
                 cancera[i]   = ran(-179, 180);
@@ -104,7 +104,7 @@ var h = Math.max(document.documentElement.clientHeight, window.innerHeight || 0)
             cancert[i] = cancert[i] - 1;
             if (cancerv[i] < 1) cancert[i] = 0;
             else cancerv[i] = cancerv[i] - .05;              
-    
+    } catch(e) {}
         }
         for(i = 0; i < circs.length; ++i)
         {
@@ -146,12 +146,18 @@ var h = Math.max(document.documentElement.clientHeight, window.innerHeight || 0)
         circs.attr({fill: "#ea2d44", stroke: "#d90a2d"});
         get_cancer("#container2");
         moveIt();
+	$('body').on('click','.cancer_cell',function(){
+		$("#" + $(this).attr("id")).remove();
+	})
     };
 }());
 
 function  pop_cancer(sender) {
-    alert("pop");
-    $(this).fadeOut();
+    	$(this).attr("todel", "true");
+}
+
+function  pop_cancer_bad(sender) {
+    	$(this).attr("todel", "true");
 }
 
 function  get_cancer(container) {
@@ -160,10 +166,10 @@ function  get_cancer(container) {
         var x = ran(0, w);
         var y = ran(0, h);
         if (i >= cancer.length / 2) {
-            $(container).append("<img style='width: 96px;' onClick='pop_cancer' src='img/cellcancer.png' class='cancer_cell' id='"+cancer[i]+"'></img>");
+            $(container).append("<img style='width: 96px;' onClick='pop_cancer_bad(this)' src='img/cellcancer.png' class='cancer_cell' id='"+cancer[i]+"'></img>");
         }
         else {
-            $(container).append("<img  onClick='pop_cancer' src='img/cell.png' class='cancer_cell' id='"+cancer[i]+"'></img>");
+            $(container).append("<img  onClick='pop_cancer(this)' src='img/cell.png' class='cancer_cell' id='"+cancer[i]+"'></img>");
         }
         $("#" + cancer[i]).css('left', x);
         $("#" + cancer[i]).css('top', y);
