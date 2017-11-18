@@ -2,10 +2,8 @@ body {
     padding: 0px;
     margin: 0px;
     font-family: roboto;
-    background-attachment: fixed;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-image: url('https://lh4.googleusercontent.com/HNNAxL2DVpu4LVgncv5GKQNdyDOjeD9ob_8Ni5zqV8Dy5-d3OmY1NftotParQ722nQONRnx5UW-cwBb_P9Zd=w1215-h895');
+    background-size: 135%;
+    background-image: url('../img/Fond2_1920.jpg');
     overflow: hidden;
 }
 
@@ -97,7 +95,7 @@ Animated gif
   }
 }
 
-/*#cell1 {
+#cell1 {
     transform: rotate(125deg);
 }
 
@@ -131,4 +129,4 @@ Animated gif
 
 #cell9 {
     transform: rotate(270deg);
-}*/
+}
