@@ -3,7 +3,7 @@ body {
     margin: 0px;
     font-family: roboto;
     background-size: 135%;
-    background-image: url('../img/Fond2_1920.jpg');
+    /*background-image: url('../img/Fond2_1920.jpg');*/
     overflow: hidden;
 }
 
