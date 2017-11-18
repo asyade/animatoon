@@ -51,7 +51,7 @@ Animated gif
 }
 
 .cancer_cell {
-    width: 74px;
+width: 82px;
     position: absolute;
 }
 
@@ -59,6 +59,10 @@ Animated gif
     cursor:pointer;
 }
 
+.in_out{
+ -webkit-animation: zoom-in-out 0.2s linear 0.2s infinite normal ;
+ animation: zoom-in-out 0.2s linear 0.2s infinite normal ;
+}
 
 @-webkit-keyframes zoom-in-out {
   0%{
