@@ -3,11 +3,8 @@ body {
     margin: 0px;
     font-family: roboto;
     background-size: 135%;
-    /*background-image: url('../img/Fond2_1920.jpg');*/
     overflow: hidden;
 }
-
-
 
 /*
 Bubble
@@ -47,13 +44,11 @@ Animated gif
 
 .gif_left_bottom_15 {
     width: 30%;
+    transition: all 1s;
     position: absolute;
     bottom: 5%;
     right: 5%;
 }
-
-
-
 
 .cancer_cell {
     width: 74px;

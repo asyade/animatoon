@@ -13,10 +13,13 @@
 +
         $( document ).ready(() => {
         
-            bubble_push(300, 175, "Ils faut à tout pris qu’on trouve les Crabnappant cancéreux ! Touches les différentes cellules pour les débusquer !", 100000, () => {
+            bubble_push(300, 175, "Ils faut à tout prix qu’on trouve les Crabnappant cancéreux ! Touche les différentes cellules pour les débusquer !", 100000, () => {
                    $("#bubble").fadeOut(500, () => {
+			$("#whitemen").css("bottom", "0px");
+			$("#whitemen").css("right", "0px");
                        $("#container1").fadeOut(500, () => {
                             $("#container2").fadeIn();
+			$("#whitemen").attr("src", "img/globule-blanc-qui-se-retourne.gif");
                        });
                    });
             }, "#container1");
@@ -25,7 +28,7 @@
 </head>
 <body>
 
-        <img class="gif_left_bottom_15"src="https://raw.githubusercontent.com/asyade/animatoon/master/globule-blanc-per-frame.gif"></img>
+        <img id="whitemen" class="gif_left_bottom_15"src="https://raw.githubusercontent.com/asyade/animatoon/master/globule-blanc-per-frame.gif"></img>
     <div id="container1">
     </div>
     <div style="overflow: hidden; display:none;" id="container2">
