@@ -1,0 +1,132 @@
+body {
+    padding: 0px;
+    margin: 0px;
+    font-family: roboto;
+    background-size: 135%;
+    background-image: url('../img/Fond2_1920.jpg');
+    overflow: hidden;
+}
+
+
+
+/*
+Bubble
+*/
+
+.bubble {
+    position: absolute;
+    width: 300px;
+    height: 250px;
+    background: BurlyWood;
+    border-radius: 50% / 10%;
+    color: white;
+    text-align: center;
+    text-indent: .1em;
+    padding: 15px;
+    margin: 10%;
+    box-shadow: 0px 0px 5px rgba(31, 73, 125, 0.8);
+}
+
+.bubble:before {
+    box-shadow: 12px 0 150x -4px rgba(31, 73, 125, 0.8), -12px 0 8px -4px rgba(31, 73, 125, 0.8);    font-size: 25px;
+    color: black;
+    padding: 13px;
+    content: attr(data-before);
+    position: absolute;
+    top: 10%;
+    bottom: 10%;
+    right: -5%;
+    left: -5%;
+    background: inherit;
+    border-radius: 5% / 50%;
+}
+
+/*
+Animated gif
+*/
+
+.gif_left_bottom_15 {
+    width: 30%;
+    position: absolute;
+    bottom: 5%;
+    right: 5%;
+}
+
+
+
+
+.cancer_cell {
+    width: 74px;
+    position: absolute;
+}
+
+.anime_fade_inout:hover {
+    cursor:pointer;
+}
+
+
+@-webkit-keyframes zoom-in-out {
+  0%{
+    -webkit-transform: scale(1);
+	transform: scale(1);
+  }
+  50%{
+	-webkit-transform: scale(1.2);
+	transform: scale(1.2);
+  }
+  100%{
+	-webkit-transform: scale(1);
+	transform: scale(1);
+  }
+}
+
+@keyframes zoom-in-out {
+  0%{
+	-ms-transform: scale(1);
+	transform: scale(1);
+  }
+  50%{
+	-ms-transform: scale(1.2);
+	transform: scale(1.2);
+  }
+  100%{
+	-ms-transform: scale(1);
+	transform: scale(1);
+  }
+}
+
+#cell1 {
+    transform: rotate(125deg);
+}
+
+#cell3 {
+    transform: rotate(50deg);
+}
+
+#cell2 {
+    transform: rotate(25deg);
+}
+
+#cell4 {
+    transform: rotate(15deg);
+}
+
+#cell5 {
+    transform: rotate(19deg);
+}
+
+#cell6 {
+    transform: rotate(70deg);
+}
+
+#cell7 {
+    transform: rotate(110deg);
+}
+
+#cell8 {
+    transform: rotate(170deg);
+}
+
+#cell9 {
+    transform: rotate(270deg);
+}
