@@ -10,30 +10,52 @@
 			  crossorigin="anonymous"></script>
 			  <script src="script.js"></script>
     <script>
-+
-        $( document ).ready(() => {
-        
-            bubble_push(300, 175, "Ils faut à tout prix qu’on trouve les Crabnappants cancéreux ! Touche les différentes cellules pour les débusquer !", 100000, () => {
+
+	var premierClick = 0;
+	
+	function gotonext() {
+		 if (premierClick !== 0)
+			return ;
+		 premierClick = 1;
                    $("#bubble").fadeOut(500, () => {
 			$("#whitemen").css("bottom", "0px");
 			$("#whitemen").css("right", "0px");
                        $("#container1").fadeOut(500, () => {
+			$("#bck").attr("src", "img/Fond1_1920.png");
                             $("#container2").fadeIn();
 			$("#whitemen").attr("src", "img/globule-blanc-qui-se-retourne.gif");
                        });
                    });
+
+	}
+	$ ( document ).click(() => {
+		gotonext();
+	});
+        $( document ).ready(() => {
+
+
+
+var images = ['img/cell.png', 'img/greencell.png', 'img/cellcancer.png', 'img/globule-blanc-per-frame.gif', 'img/globule-blanc-qui-se-retourne.gif', 'img/Fond1_1920.png', 'img/Fond2_1920.png', 'img/Fond3_1920.png', 'img/greencellcancer.png', 'img/redcancercell.png', 'img/redcancercell.png'],
+    preload = new Image();
+// Since you're using jQuery...
+$.each(images, function(index, value) {
+    preload.src = value;     // Changing the src requests the corresponding file
+});       
+ 
+            bubble_push(300, 175, "Ils faut à tout prix qu’on trouve les Crabnappants cancéreux ! Touche les différentes cellules pour les débusquer !", 100000, () => {
+        		gotonext();
             }, "#container1");
-        });
+		});
     </script>
 </head>
 <body>
 
-        <img id="whitemen" class="gif_left_bottom_15"src="https://raw.githubusercontent.com/asyade/animatoon/master/globule-blanc-per-frame.gif"></img>
+        <img id="whitemen" class="gif_left_bottom_15" src="img/globule-blanc-per-frame.gif"></img>
     <div id="container1">
     </div>
     <div style="overflow: hidden; display:none;" id="container2">
         <div style="overflow: hidden" id="canvas"></div>
     </div>
-	<img style="z-index: -9999; position:absolute; bottom:0;" src="../img/Fond2_1920.jpg"></img>
+	<img id="bck" style="width: 100%; height: 100%; z-index: -9999; position:absolute; bottom:0;" src="img/Fond1_1920.png"></img>
 </body>
 </html>
