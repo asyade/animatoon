@@ -165,7 +165,7 @@ var h = Math.max(document.documentElement.clientHeight, window.innerHeight || 0)
 			 }
 			 else if (state === 5) {
 
-				$("#bck").attr("src", "img/Fond2_1920.png");
+				$("#bck").attr("src", "img/fond3_on_fire.png");
 			 	$("#cell1").attr("src", "img/redcell.png");
 				$("#cell1").attr("cancer", "true");
 				$("#cell2").attr("cancer", "true");

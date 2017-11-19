@@ -12,6 +12,7 @@
     <script>
 
 	var premierClick = 0;
+	var h, w;
 	
 	function gotonext() {
 		 if (premierClick !== 0)
@@ -28,12 +29,18 @@
                    });
 
 	}
+	$ ( document ).resize(() => {
+		w = Math.max(document.documentElement.clientWidth, window.innerWidth || 0) - 5;
+		h = Math.max(document.documentElement.clientHeight, window.innerHeight || 0) - 5;
+	});
 	$ ( document ).click(() => {
 		gotonext();
 	});
         $( document ).ready(() => {
 
-
+		
+		w = Math.max(document.documentElement.clientWidth, window.innerWidth || 0) - 5;
+		h = Math.max(document.documentElement.clientHeight, window.innerHeight || 0) - 5;
 
 var images = ['img/cell.png', 'img/greencell.png', 'img/cellcancer.png', 'img/globule-blanc-per-frame.gif', 'img/globule-blanc-qui-se-retourne.gif', 'img/Fond1_1920.png', 'img/Fond2_1920.png', 'img/Fond3_1920.png', 'img/greencellcancer.png', 'img/redcancercell.png', 'img/redcancercell.png'],
     preload = new Image();
