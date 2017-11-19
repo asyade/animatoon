@@ -190,9 +190,13 @@ var h = Math.max(document.documentElement.clientHeight, window.innerHeight || 0)
 			 }
 			 else {
 				 $(this).attr("src", "img/redcancercell.png");
-				 window.setTimeout(() => {
-						 $(this).remove();
-				 });
+                                 window.setTimeout(() => {
+                                        $(this).css("display", "none");
+                                        window.setTimeout(() => {
+                                                $(this).css("display", "initial");
+                                        }, 10000);
+
+                                 }, 200);
 			 }
 	 });
  };
