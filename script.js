@@ -164,15 +164,18 @@ var h = Math.max(document.documentElement.clientHeight, window.innerHeight || 0)
 			 state += 1;
 			 }
 			 else if (state === 5) {
-
+					
+				get_drug();
+				setTimeout(() => {
 				flash();
-				$("#bck").attr("src", "img/fond3_on_fire.png");
+				$("#bck").attr("src", "img/fond3_on_fire.jpeg");
 			 	$("#cell1").attr("src", "img/redcell.png");
 				$("#cell1").attr("cancer", "true");
 				$("#cell2").attr("cancer", "true");
 			 	$("#cell2").attr("src", "img/redcell.png");
 			 	$(".cancer_cell_bad").attr("src", 'img/redcancercell.png');
 			 	state += 1;
+				}, 2000);
 			 }
 			 else if ($(this).is(".good_cell")) {
 				if ($(this).attr("cancer") === "true"){

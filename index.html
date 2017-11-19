@@ -19,7 +19,12 @@
 	  
 	$('.flash')
 	   .show()  //show the hidden div
-	   .animate({opacity: 1}, 300).fadeOut(3000);	
+	   .animate({opacity: 1}, 300).fadeOut(300);	
+	}
+
+	function  get_drug() {
+		$("body").append("<img class='drug' style='position: absolute; bottom: 5%; right: 5%;' src='img/run_anticorp.gif' ></img>");
+		
 	}
 	   
 
@@ -31,7 +36,7 @@
 			$("#whitemen").css("bottom", "0px");
 			$("#whitemen").css("right", "0px");
                        $("#container1").fadeOut(500, () => {
-			$("#bck").attr("src", "img/Fond1_1920.png");
+			$("#bck").attr("src", "img/fond1_1920.jpeg");
                             $("#container2").fadeIn();
 			$("#whitemen").attr("src", "img/globule-blanc-qui-se-retourne.gif");
                        });
@@ -52,7 +57,7 @@
 		w = Math.max(document.documentElement.clientWidth, window.innerWidth || 0) - 5;
 		h = Math.max(document.documentElement.clientHeight, window.innerHeight || 0) - 5;
 
-var images = ['img/fond3_on_fire.png', 'img/cell.png', 'img/greencell.png', 'img/cellcancer.png', 'img/globule-blanc-per-frame.gif', 'img/globule-blanc-qui-se-retourne.gif', 'img/Fond1_1920.png', 'img/Fond2_1920.png', 'img/Fond3_1920.png', 'img/greencellcancer.png', 'img/redcancercell.png', 'img/redcancercell.png'],
+var images = ['img/fond3_on_fire.jpeg', 'img/cell.png', 'img/greencell.png', 'img/cellcancer.png', 'img/globule-blanc-per-frame.gif', 'img/globule-blanc-qui-se-retourne.gif', 'img/fond1_1920.jpeg', 'img/fond2_1920.jpeg', 'img/fond3_1920.jpeg', 'img/greencellcancer.jpeg', 'img/redcancercell.png', 'img/redcancercell.png'],
     preload = new Image();
 // Since you're using jQuery...
 $.each(images, function(index, value) {
@@ -70,12 +75,12 @@ $.each(images, function(index, value) {
 	<div class="flash">
 	</div>
 
-        <img id="whitemen" class="gif_left_bottom_15" src="img/globule-blanc-per-frame.gif"></img>
+        <img style="z-index:9999;" id="whitemen" class="gif_left_bottom_15" src="img/globule-blanc-per-frame.gif"></img>
     <div id="container1">
     </div>
     <div style="overflow: hidden; display:none;" id="container2">
         <div style="overflow: hidden" id="canvas"></div>
     </div>
-	<img id="bck" style="width: 100%; height: 100%; z-index: -9999; position:absolute; bottom:0;" src="img/Fond1_1920.png"></img>
-</body>
+	<img id="bck" style="width: 100%; height: 100%; z-index: -9999; position:absolute; bottom:0;" src="img/fond1_1920.jpeg"></img>
+</bod
 </html>
