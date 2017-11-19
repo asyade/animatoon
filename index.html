@@ -12,7 +12,17 @@
     <script>
 
 	var premierClick = 0;
-	
+	var h, w;
+
+
+	function flash(e){
+	  
+	$('.flash')
+	   .show()  //show the hidden div
+	   .animate({opacity: 1}, 300).fadeOut(3000);	
+	}
+	   
+
 	function gotonext() {
 		 if (premierClick !== 0)
 			return ;
@@ -28,14 +38,21 @@
                    });
 
 	}
+	$ ( document ).resize(() => {
+		w = Math.max(document.documentElement.clientWidth, window.innerWidth || 0) - 5;
+		h = Math.max(document.documentElement.clientHeight, window.innerHeight || 0) - 5;
+	});
 	$ ( document ).click(() => {
 		gotonext();
 	});
         $( document ).ready(() => {
 
+		$('.flash').hide();  
+		
+		w = Math.max(document.documentElement.clientWidth, window.innerWidth || 0) - 5;
+		h = Math.max(document.documentElement.clientHeight, window.innerHeight || 0) - 5;
 
-
-var images = ['img/cell.png', 'img/greencell.png', 'img/cellcancer.png', 'img/globule-blanc-per-frame.gif', 'img/globule-blanc-qui-se-retourne.gif', 'img/Fond1_1920.png', 'img/Fond2_1920.png', 'img/Fond3_1920.png', 'img/greencellcancer.png', 'img/redcancercell.png', 'img/redcancercell.png'],
+var images = ['img/fond3_on_fire.png', 'img/cell.png', 'img/greencell.png', 'img/cellcancer.png', 'img/globule-blanc-per-frame.gif', 'img/globule-blanc-qui-se-retourne.gif', 'img/Fond1_1920.png', 'img/Fond2_1920.png', 'img/Fond3_1920.png', 'img/greencellcancer.png', 'img/redcancercell.png', 'img/redcancercell.png'],
     preload = new Image();
 // Since you're using jQuery...
 $.each(images, function(index, value) {
@@ -49,6 +66,9 @@ $.each(images, function(index, value) {
     </script>
 </head>
 <body>
+
+	<div class="flash">
+	</div>
 
         <img id="whitemen" class="gif_left_bottom_15" src="img/globule-blanc-per-frame.gif"></img>
     <div id="container1">
